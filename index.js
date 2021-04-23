@@ -63,18 +63,10 @@ class CountDown extends React.Component {
     if (this.props.until !== prevProps.until || this.props.id !== prevProps.id) {
       this.setState({
         lastUntil: prevState.until,
-        until: Math.max(prevProps.until, 0)
+        until: this.props.until,
       });
     }
   }
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.until !== nextProps.until || this.props.id !== nextProps.id) {
-  //     this.setState({
-  //       lastUntil: this.state.until,
-  //       until: Math.max(nextProps.until, 0)
-  //     });
-  //   }
-  // }
 
   _handleAppStateChange = currentAppState => {
     const {until, wentBackgroundAt} = this.state;
